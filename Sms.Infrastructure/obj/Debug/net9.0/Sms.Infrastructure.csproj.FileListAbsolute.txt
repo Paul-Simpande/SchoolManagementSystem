@@ -1,0 +1,17 @@
+D:\Documents\Projects\School Mangement System\Backend\Sms.Infrastructure\bin\Debug\net9.0\Sms.Infrastructure.deps.json
+D:\Documents\Projects\School Mangement System\Backend\Sms.Infrastructure\bin\Debug\net9.0\Sms.Infrastructure.runtimeconfig.json
+D:\Documents\Projects\School Mangement System\Backend\Sms.Infrastructure\bin\Debug\net9.0\Sms.Infrastructure.dll
+D:\Documents\Projects\School Mangement System\Backend\Sms.Infrastructure\bin\Debug\net9.0\Sms.Infrastructure.pdb
+D:\Documents\Projects\School Mangement System\Backend\Sms.Infrastructure\bin\Debug\net9.0\Sms.Core.dll
+D:\Documents\Projects\School Mangement System\Backend\Sms.Infrastructure\bin\Debug\net9.0\Sms.Core.pdb
+D:\Documents\Projects\School Mangement System\Backend\Sms.Infrastructure\obj\Debug\net9.0\Sms.Infrastructure.csproj.AssemblyReference.cache
+D:\Documents\Projects\School Mangement System\Backend\Sms.Infrastructure\obj\Debug\net9.0\Sms.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documents\Projects\School Mangement System\Backend\Sms.Infrastructure\obj\Debug\net9.0\Sms.Infrastructure.AssemblyInfoInputs.cache
+D:\Documents\Projects\School Mangement System\Backend\Sms.Infrastructure\obj\Debug\net9.0\Sms.Infrastructure.AssemblyInfo.cs
+D:\Documents\Projects\School Mangement System\Backend\Sms.Infrastructure\obj\Debug\net9.0\Sms.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Documents\Projects\School Mangement System\Backend\Sms.Infrastructure\obj\Debug\net9.0\Sms.Infr.ED8BB374.Up2Date
+D:\Documents\Projects\School Mangement System\Backend\Sms.Infrastructure\obj\Debug\net9.0\Sms.Infrastructure.dll
+D:\Documents\Projects\School Mangement System\Backend\Sms.Infrastructure\obj\Debug\net9.0\refint\Sms.Infrastructure.dll
+D:\Documents\Projects\School Mangement System\Backend\Sms.Infrastructure\obj\Debug\net9.0\Sms.Infrastructure.pdb
+D:\Documents\Projects\School Mangement System\Backend\Sms.Infrastructure\obj\Debug\net9.0\Sms.Infrastructure.genruntimeconfig.cache
+D:\Documents\Projects\School Mangement System\Backend\Sms.Infrastructure\obj\Debug\net9.0\ref\Sms.Infrastructure.dll

@@ -1,0 +1,12 @@
+D:\Documents\Projects\School Mangement System\Backend\Sms.Core\bin\Debug\net9.0\Sms.Core.deps.json
+D:\Documents\Projects\School Mangement System\Backend\Sms.Core\bin\Debug\net9.0\Sms.Core.dll
+D:\Documents\Projects\School Mangement System\Backend\Sms.Core\bin\Debug\net9.0\Sms.Core.pdb
+D:\Documents\Projects\School Mangement System\Backend\Sms.Core\obj\Debug\net9.0\Sms.Core.csproj.AssemblyReference.cache
+D:\Documents\Projects\School Mangement System\Backend\Sms.Core\obj\Debug\net9.0\Sms.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documents\Projects\School Mangement System\Backend\Sms.Core\obj\Debug\net9.0\Sms.Core.AssemblyInfoInputs.cache
+D:\Documents\Projects\School Mangement System\Backend\Sms.Core\obj\Debug\net9.0\Sms.Core.AssemblyInfo.cs
+D:\Documents\Projects\School Mangement System\Backend\Sms.Core\obj\Debug\net9.0\Sms.Core.csproj.CoreCompileInputs.cache
+D:\Documents\Projects\School Mangement System\Backend\Sms.Core\obj\Debug\net9.0\Sms.Core.dll
+D:\Documents\Projects\School Mangement System\Backend\Sms.Core\obj\Debug\net9.0\refint\Sms.Core.dll
+D:\Documents\Projects\School Mangement System\Backend\Sms.Core\obj\Debug\net9.0\Sms.Core.pdb
+D:\Documents\Projects\School Mangement System\Backend\Sms.Core\obj\Debug\net9.0\ref\Sms.Core.dll

@@ -1,0 +1,17 @@
+D:\Documents\Projects\School Mangement System\Backend\Sms.Services\bin\Debug\net9.0\Sms.Services.deps.json
+D:\Documents\Projects\School Mangement System\Backend\Sms.Services\bin\Debug\net9.0\Sms.Services.dll
+D:\Documents\Projects\School Mangement System\Backend\Sms.Services\bin\Debug\net9.0\Sms.Services.pdb
+D:\Documents\Projects\School Mangement System\Backend\Sms.Services\bin\Debug\net9.0\Sms.Core.dll
+D:\Documents\Projects\School Mangement System\Backend\Sms.Services\bin\Debug\net9.0\Sms.Infrastructure.dll
+D:\Documents\Projects\School Mangement System\Backend\Sms.Services\bin\Debug\net9.0\Sms.Core.pdb
+D:\Documents\Projects\School Mangement System\Backend\Sms.Services\bin\Debug\net9.0\Sms.Infrastructure.pdb
+D:\Documents\Projects\School Mangement System\Backend\Sms.Services\obj\Debug\net9.0\Sms.Services.csproj.AssemblyReference.cache
+D:\Documents\Projects\School Mangement System\Backend\Sms.Services\obj\Debug\net9.0\Sms.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documents\Projects\School Mangement System\Backend\Sms.Services\obj\Debug\net9.0\Sms.Services.AssemblyInfoInputs.cache
+D:\Documents\Projects\School Mangement System\Backend\Sms.Services\obj\Debug\net9.0\Sms.Services.AssemblyInfo.cs
+D:\Documents\Projects\School Mangement System\Backend\Sms.Services\obj\Debug\net9.0\Sms.Services.csproj.CoreCompileInputs.cache
+D:\Documents\Projects\School Mangement System\Backend\Sms.Services\obj\Debug\net9.0\Sms.Serv.D89D3062.Up2Date
+D:\Documents\Projects\School Mangement System\Backend\Sms.Services\obj\Debug\net9.0\Sms.Services.dll
+D:\Documents\Projects\School Mangement System\Backend\Sms.Services\obj\Debug\net9.0\refint\Sms.Services.dll
+D:\Documents\Projects\School Mangement System\Backend\Sms.Services\obj\Debug\net9.0\Sms.Services.pdb
+D:\Documents\Projects\School Mangement System\Backend\Sms.Services\obj\Debug\net9.0\ref\Sms.Services.dll

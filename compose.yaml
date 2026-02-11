@@ -1,0 +1,7 @@
+﻿services:
+  sms.api:
+    image: sms.api
+    build:
+      context: .
+      dockerfile: Sms.Api/Dockerfile
+
