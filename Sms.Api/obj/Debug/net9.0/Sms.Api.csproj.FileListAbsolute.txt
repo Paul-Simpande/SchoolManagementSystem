@@ -166,3 +166,4 @@ D:\Documents\Projects\School Mangement System\Backend\Sms.Api\bin\Debug\net9.0\H
 D:\Documents\Projects\School Mangement System\Backend\Sms.Api\bin\Debug\net9.0\System.IO.Hashing.dll
 D:\Documents\Projects\School Mangement System\Backend\Sms.Api\bin\Debug\net9.0\Yarp.ReverseProxy.dll
 D:\Documents\Projects\School Mangement System\Backend\Sms.Api\bin\Debug\net9.0\Dapper.dll
+D:\Documents\Projects\School Mangement System\Backend\Sms.Api\obj\Debug\net9.0\Sms.Api.sourcelink.json

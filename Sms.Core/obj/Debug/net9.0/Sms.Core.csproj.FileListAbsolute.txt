@@ -10,3 +10,4 @@ D:\Documents\Projects\School Mangement System\Backend\Sms.Core\obj\Debug\net9.0\
 D:\Documents\Projects\School Mangement System\Backend\Sms.Core\obj\Debug\net9.0\refint\Sms.Core.dll
 D:\Documents\Projects\School Mangement System\Backend\Sms.Core\obj\Debug\net9.0\Sms.Core.pdb
 D:\Documents\Projects\School Mangement System\Backend\Sms.Core\obj\Debug\net9.0\ref\Sms.Core.dll
+D:\Documents\Projects\School Mangement System\Backend\Sms.Core\obj\Debug\net9.0\Sms.Core.sourcelink.json

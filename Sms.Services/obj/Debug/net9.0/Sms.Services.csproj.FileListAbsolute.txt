@@ -15,3 +15,4 @@ D:\Documents\Projects\School Mangement System\Backend\Sms.Services\obj\Debug\net
 D:\Documents\Projects\School Mangement System\Backend\Sms.Services\obj\Debug\net9.0\refint\Sms.Services.dll
 D:\Documents\Projects\School Mangement System\Backend\Sms.Services\obj\Debug\net9.0\Sms.Services.pdb
 D:\Documents\Projects\School Mangement System\Backend\Sms.Services\obj\Debug\net9.0\ref\Sms.Services.dll
+D:\Documents\Projects\School Mangement System\Backend\Sms.Services\obj\Debug\net9.0\Sms.Services.sourcelink.json
