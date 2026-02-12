@@ -48,6 +48,10 @@ builder.Services.AddScoped<IUserStatusRepository, UserStatusRepository>();
 builder.Services.AddScoped<IStudentStatusRepository, StudentStatusRepository>();
 builder.Services.AddScoped<IGenderRepository, GenderRepository>();
 builder.Services.AddScoped<IDayOfWeekRepository, DayOfWeekRepository>();
+builder.Services.AddScoped<IAttendanceStatusRepository, AttendanceStatusRepository>();
+builder.Services.AddScoped<IInvoiceStatusRepository, InvoiceStatusRepository>();
+builder.Services.AddScoped<IPaymentMethodRepository, PaymentMethodRepository>();
+builder.Services.AddScoped<IBillingCycleRepository, BillingCycleRepository>();
 
 // Then register service
 builder.Services.AddScoped<SchoolService>();
@@ -59,6 +63,11 @@ builder.Services.AddScoped<UserStatusService>();
 builder.Services.AddScoped<StudentStatusService>();
 builder.Services.AddScoped<GenderService>();
 builder.Services.AddScoped<DayOfWeeksService>();
+builder.Services.AddScoped<AttendanceStatusService>();
+builder.Services.AddScoped<InvoiceStatusService>();
+builder.Services.AddScoped<PaymentMethodService>();
+builder.Services.AddScoped<BillingCycleService>();
+builder.Services.AddScoped<SchoolStatusService>();
 
 #endregion
 
@@ -88,6 +97,10 @@ builder.Services
     .AddType<StudentStatusQuery>()
     .AddType<GenderQuery>() 
     .AddType<DayOfWeekQuery>()
+    .AddType<AttendanceStatusQuery>()
+    .AddType<InvoiceStatusQuery>()
+    .AddType<PaymentMethodQuery>()
+    .AddType<BillingCycleQuery>()
     .AddMutationType(d => d.Name("Mutation"))
     .AddType<SchoolMutation>()
     .AddType<AcademicYearMutation>()
