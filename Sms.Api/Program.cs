@@ -52,6 +52,8 @@ builder.Services.AddScoped<IAttendanceStatusRepository, AttendanceStatusReposito
 builder.Services.AddScoped<IInvoiceStatusRepository, InvoiceStatusRepository>();
 builder.Services.AddScoped<IPaymentMethodRepository, PaymentMethodRepository>();
 builder.Services.AddScoped<IBillingCycleRepository, BillingCycleRepository>();
+builder.Services.AddScoped<IRequestStatusRepository, RequestStatusRepository>();
+builder.Services.AddScoped<ISupplierStatusRepository, SupplierStatusRepository>();
 
 // Then register service
 builder.Services.AddScoped<SchoolService>();
@@ -68,6 +70,10 @@ builder.Services.AddScoped<InvoiceStatusService>();
 builder.Services.AddScoped<PaymentMethodService>();
 builder.Services.AddScoped<BillingCycleService>();
 builder.Services.AddScoped<SchoolStatusService>();
+builder.Services.AddScoped<UserStatusService>();
+builder.Services.AddScoped<RequestStatusService>();
+builder.Services.AddScoped<SupplierStatusService>();
+
 
 #endregion
 
@@ -101,6 +107,8 @@ builder.Services
     .AddType<InvoiceStatusQuery>()
     .AddType<PaymentMethodQuery>()
     .AddType<BillingCycleQuery>()
+    .AddType<RequestStatusQuery>()
+    .AddType<SupplierStatusQuery>()
     .AddMutationType(d => d.Name("Mutation"))
     .AddType<SchoolMutation>()
     .AddType<AcademicYearMutation>()
