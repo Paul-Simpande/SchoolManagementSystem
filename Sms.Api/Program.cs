@@ -54,6 +54,14 @@ builder.Services.AddScoped<IPaymentMethodRepository, PaymentMethodRepository>();
 builder.Services.AddScoped<IBillingCycleRepository, BillingCycleRepository>();
 builder.Services.AddScoped<IRequestStatusRepository, RequestStatusRepository>();
 builder.Services.AddScoped<ISupplierStatusRepository, SupplierStatusRepository>();
+builder.Services.AddScoped<IBudgetStatusRepository, BudgetStatusRepository>();
+builder.Services.AddScoped<IPurchaseOrderStatusRepository, PurchaseOrderStatusRepository>();
+builder.Services.AddScoped<IPaymentStatusRepository, PaymentStatusRepository>();
+builder.Services.AddScoped<IAdmissionStatusRepository, AdmissionStatusRepository>();
+builder.Services.AddScoped<ICorrectionStatusRepository, CorrectionStatusRepository>();
+builder.Services.AddScoped<ITicketStatusRepository, TicketStatusRepository>();
+builder.Services.AddScoped<IIntegrationStatusRepository, IntegrationStatusRepository>();
+builder.Services.AddScoped<IUptimeStatusRepository, UptimeStatusRepository>();
 
 // Then register service
 builder.Services.AddScoped<SchoolService>();
@@ -73,6 +81,14 @@ builder.Services.AddScoped<SchoolStatusService>();
 builder.Services.AddScoped<UserStatusService>();
 builder.Services.AddScoped<RequestStatusService>();
 builder.Services.AddScoped<SupplierStatusService>();
+builder.Services.AddScoped<BudgetStatusService>();
+builder.Services.AddScoped<PurchaseOrderStatusService>();
+builder.Services.AddScoped<PaymentStatusService>();
+builder.Services.AddScoped<AdmissionStatusService>();
+builder.Services.AddScoped<CorrectionStatusService>();
+builder.Services.AddScoped<TicketStatusService>();
+builder.Services.AddScoped<IntegrationStatusService>();
+builder.Services.AddScoped<UptimeStatusService>();
 
 
 #endregion
@@ -109,6 +125,14 @@ builder.Services
     .AddType<BillingCycleQuery>()
     .AddType<RequestStatusQuery>()
     .AddType<SupplierStatusQuery>()
+    .AddType<BudgetStatusQuery>()
+    .AddType<PurchaseOrderStatusQuery>()
+    .AddType<PaymentStatusQuery>()
+    .AddType<AdmissionStatusQuery>()
+    .AddType<CorrectionStatusQuery>()
+    .AddType<TicketStatusQuery>()
+    .AddType<IntegrationStatusQuery>()
+    .AddType<UptimeStatusQuery>()
     .AddMutationType(d => d.Name("Mutation"))
     .AddType<SchoolMutation>()
     .AddType<AcademicYearMutation>()

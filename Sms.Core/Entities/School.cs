@@ -44,6 +44,10 @@ public partial class School
     [Column("country")]
     [StringLength(100)]
     public string? Country { get; set; }
+    
+    [Column("logo_path")]
+    [StringLength(500)]
+    public string? LogoPath { get; set; }
 
     [Column("website")]
     [StringLength(150)]
