@@ -23,6 +23,7 @@ public class SchoolMutation
             District = input.District,
             Province = input.Province,
             Country = input.Country,
+            LogoPath = input.LogoPath,
             Website = input.Website,
             StatusId = input.StatusId
         };
@@ -46,6 +47,7 @@ public class SchoolMutation
             District = input.District,
             Province = input.Province,
             Country = input.Country,
+            LogoPath = input.LogoPath,
             Website = input.Website,
             StatusId = input.StatusId
         };

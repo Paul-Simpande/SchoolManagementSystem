@@ -9,6 +9,7 @@ public record CreateSchoolInput(
     string District,
     string Province,
     string Country,
+    string LogoPath,
     string Website,
     int StatusId
 );
