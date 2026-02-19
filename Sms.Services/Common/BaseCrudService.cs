@@ -20,6 +20,9 @@ public abstract class BaseCrudService<TEntity>
 
     public async Task<IEnumerable<TEntity>> GetAllAsync()
         => await _repo.GetAllAsync();
+    
+    public async Task<TEntity> GetByIdAsync(int id)
+        => await _repo.GetByIdAsync(id);
 
     public async Task<bool> DeleteAsync(int id, int? userId)
     {
