@@ -62,6 +62,7 @@ builder.Services.AddScoped<ICorrectionStatusRepository, CorrectionStatusReposito
 builder.Services.AddScoped<ITicketStatusRepository, TicketStatusRepository>();
 builder.Services.AddScoped<IIntegrationStatusRepository, IntegrationStatusRepository>();
 builder.Services.AddScoped<IUptimeStatusRepository, UptimeStatusRepository>();
+builder.Services.AddScoped<ISupplierTypeRepository, SupplierTypeRepository>();
 
 // Then register service
 builder.Services.AddScoped<SchoolService>();
@@ -89,6 +90,7 @@ builder.Services.AddScoped<CorrectionStatusService>();
 builder.Services.AddScoped<TicketStatusService>();
 builder.Services.AddScoped<IntegrationStatusService>();
 builder.Services.AddScoped<UptimeStatusService>();
+builder.Services.AddScoped<SupplierTypeService>();
 
 
 #endregion
@@ -133,6 +135,7 @@ builder.Services
     .AddType<TicketStatusQuery>()
     .AddType<IntegrationStatusQuery>()
     .AddType<UptimeStatusQuery>()
+    .AddType<SupplierTypeQuery>()
     .AddMutationType(d => d.Name("Mutation"))
     .AddType<SchoolMutation>()
     .AddType<AcademicYearMutation>()
