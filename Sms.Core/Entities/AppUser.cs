@@ -54,6 +54,9 @@ public partial class AppUser
 
     [Column("deleted_at", TypeName = "datetime")]
     public DateTime? DeletedAt { get; set; }
+    
+    [Column("gender_id", TypeName = "int")]
+    public int GenderId { get; set; }
 
     [InverseProperty("ApprovedByNavigation")]
     public virtual ICollection<ApprovalAction> ApprovalActions { get; set; } = new List<ApprovalAction>();
@@ -131,4 +134,8 @@ public partial class AppUser
 
     [InverseProperty("User")]
     public virtual ICollection<UserSession> UserSessions { get; set; } = new List<UserSession>();
+    
+    [ForeignKey("GenderId")]
+    [InverseProperty("AppUsers")]
+    public virtual Gender Gender { get; set; } = null!;
 }
