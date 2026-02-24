@@ -20,4 +20,7 @@ public partial class Gender
 
     [InverseProperty("Gender")]
     public virtual ICollection<Student> Students { get; set; } = new List<Student>();
+    
+    [InverseProperty("Gender")]
+    public virtual ICollection<AppUser> AppUsers { get; set; } = new List<AppUser>();
 }

@@ -1,26 +1,47 @@
 using Microsoft.EntityFrameworkCore;
 using Sms.Api.GraphQL.Mutations.CoreTenant;
+using Sms.Api.GraphQL.Mutations.UserAccountManagement;
 using Sms.Api.GraphQL.Queries;
 using Sms.Api.GraphQL.Queries.CoreTenant;
 using Sms.Api.GraphQL.Queries.NonStatusMaster;
 using Sms.Api.GraphQL.Queries.StatusBased;
+using Sms.Api.GraphQL.Queries.UserAccountManagement;
 using Sms.Core.Interfaces;
 using Sms.Core.Interfaces.CoreTenant;
 using Sms.Core.Interfaces.NonStatusMaster;
 using Sms.Core.Interfaces.StatusBased;
+using Sms.Core.Interfaces.UserAccountManagement;
 using Sms.Infrastructure.Context;
 using Sms.Infrastructure.Repositories;
 using Sms.Infrastructure.Repositories.CoreTenant;
 using Sms.Infrastructure.Repositories.NonStatusMaster;
 using Sms.Infrastructure.Repositories.StatusBased;
+using Sms.Infrastructure.Repositories.UserAccountManagement;
 using Sms.Services;
 using Sms.Services.CoreTenant;
 using Sms.Services.NonStatusMaster;
 using Sms.Services.StatusBased;
+using Sms.Services.UserAccountManagement;
 using static Microsoft.AspNetCore.Builder.WebApplication;
 using SchoolQuery = Sms.Api.GraphQL.Queries.CoreTenant.SchoolQuery;
 
 var builder = CreateBuilder(args);
+
+#region CORS
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy
+            .WithOrigins("http://localhost:5173")
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
+    });
+});
+
+#endregion
 
 #region DATABASE (MySQL)
 
@@ -63,6 +84,7 @@ builder.Services.AddScoped<ITicketStatusRepository, TicketStatusRepository>();
 builder.Services.AddScoped<IIntegrationStatusRepository, IntegrationStatusRepository>();
 builder.Services.AddScoped<IUptimeStatusRepository, UptimeStatusRepository>();
 builder.Services.AddScoped<ISupplierTypeRepository, SupplierTypeRepository>();
+builder.Services.AddScoped<IAppUserRepository, AppUserRepository>();
 
 // Then register service
 builder.Services.AddScoped<SchoolService>();
@@ -91,6 +113,7 @@ builder.Services.AddScoped<TicketStatusService>();
 builder.Services.AddScoped<IntegrationStatusService>();
 builder.Services.AddScoped<UptimeStatusService>();
 builder.Services.AddScoped<SupplierTypeService>();
+builder.Services.AddScoped<AppUserService>();
 
 
 #endregion
@@ -136,10 +159,12 @@ builder.Services
     .AddType<IntegrationStatusQuery>()
     .AddType<UptimeStatusQuery>()
     .AddType<SupplierTypeQuery>()
+    .AddType<AppUserQuery>()
     .AddMutationType(d => d.Name("Mutation"))
     .AddType<SchoolMutation>()
     .AddType<AcademicYearMutation>()
     .AddType<AcademicTermMutation>()
+    .AddType<AppUserMutation>()
     .AddType<DateType>();
 
 
@@ -163,6 +188,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseRouting();
+
+app.UseCors("AllowFrontend"); 
 
 app.UseAuthorization();
 
