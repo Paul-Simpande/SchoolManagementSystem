@@ -1,4 +1,8 @@
+using System.Text;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Sms.Services.Security;
+using Sms.Api.GraphQL.Mutations.Auth;
 using Sms.Api.GraphQL.Mutations.CoreTenant;
 using Sms.Api.GraphQL.Mutations.Engine;
 using Sms.Api.GraphQL.Mutations.UserAccountManagement;
@@ -93,6 +97,25 @@ builder.Services.AddScoped<IAppUserRepository, AppUserRepository>();
 builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 builder.Services.AddScoped<IUserRoleRepository, UserRoleRepository>();
 
+builder.Services.AddAuthentication("Bearer")
+    .AddJwtBearer("Bearer", options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!))
+        };
+    });
+
+builder.Services.AddAuthorization();
+
 // Then register service
 builder.Services.AddScoped<SchoolService>();
 builder.Services.AddScoped<AcademicYearService>();
@@ -123,6 +146,7 @@ builder.Services.AddScoped<SupplierTypeService>();
 builder.Services.AddScoped<AppUserService>();
 builder.Services.AddScoped<RoleService>();
 builder.Services.AddScoped<UserRoleService>();
+builder.Services.AddScoped<JwtTokenService>();
 
 #endregion
 
@@ -137,6 +161,7 @@ builder.Services.AddControllers();
 
 builder.Services
     .AddGraphQLServer()
+    .AddAuthorization()
     .AddType(new DateType())
     .ModifyRequestOptions(opt =>
     {
@@ -176,6 +201,7 @@ builder.Services
     .AddType<AcademicTermMutation>()
     .AddType<AppUserMutation>()
     .AddType<UserRoleMutation>()
+    .AddType<AuthMutation>()
     .AddType<DateType>();
 
 
@@ -200,8 +226,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseRouting();
 
-app.UseCors("AllowFrontend"); 
+app.UseCors("AllowFrontend");
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();    // REST + Webhooks

@@ -1,4 +1,5 @@
-﻿using Sms.Core.Entities;
+﻿using HotChocolate.Authorization;
+using Sms.Core.Entities;
 using Sms.Services.Engine;
 
 namespace Sms.Api.GraphQL.Queries.Engine;
@@ -6,6 +7,7 @@ namespace Sms.Api.GraphQL.Queries.Engine;
 [ExtendObjectType("Query")]
 public class UserRoleQuery
 {
+    [Authorize(Roles = new[] { "Teacher", "Headteacher" })]
     public Task<IEnumerable<UserRole>> GetUserRoles(
         int userId,
         [Service] UserRoleService service)

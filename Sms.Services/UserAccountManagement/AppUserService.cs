@@ -1,7 +1,8 @@
 ﻿using Sms.Core.DTOs.inputs.UserAccountManagement;
 using Sms.Core.Entities;
+using Sms.Core.Interfaces.Engine;
 using Sms.Core.Interfaces.UserAccountManagement;
-using Sms.Services.Sercurity;
+using Sms.Services.Security;
 
 namespace Sms.Services.UserAccountManagement;
 
@@ -102,5 +103,37 @@ public class AppUserService
         );
 
         return true;
+    }
+    
+    // LOGING METHOD
+    public async Task<string> Login(
+        string email,
+        string password,
+        IUserRoleRepository userRoleRepo,
+        IRoleRepository roleRepo,
+        JwtTokenService jwtService)
+    {
+        var user = await _repo.GetByEmailAsync(email);
+
+        if (user == null)
+            throw new Exception("Invalid email or password");
+
+        if (!PasswordHasher.Verify(password, user.PasswordHash))
+            throw new Exception("Invalid email or password");
+
+        // 🔹 Get user's roles
+        var userRoles = await userRoleRepo.GetByUserIdAsync(user.UserId);
+
+        var roleNames = new List<string>();
+
+        foreach (var ur in userRoles)
+        {
+            var role = await roleRepo.GetByRoleIdAsync(ur.RoleId);
+            if (role != null)
+                roleNames.Add(role.RoleName);
+        }
+
+        // 🔹 Generate token with roles
+        return jwtService.GenerateToken(user, roleNames);
     }
 }

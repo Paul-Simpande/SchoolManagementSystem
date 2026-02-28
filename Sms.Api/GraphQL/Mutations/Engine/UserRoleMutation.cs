@@ -1,10 +1,12 @@
-﻿using Sms.Services.Engine;
+﻿using HotChocolate.Authorization;
+using Sms.Services.Engine;
 
 namespace Sms.Api.GraphQL.Mutations.Engine;
 
 [ExtendObjectType("Mutation")]
 public class UserRoleMutation
 {
+    [Authorize(Roles = new[] { "Teacher", "Headteacher" })]
     public async Task<bool> AssignRole(
         int userId,
         int roleId,
