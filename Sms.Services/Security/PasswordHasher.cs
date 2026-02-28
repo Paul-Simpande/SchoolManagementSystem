@@ -1,4 +1,4 @@
-﻿namespace Sms.Services.Sercurity;
+﻿namespace Sms.Services.Security;
 
 public static class PasswordHasher
 {

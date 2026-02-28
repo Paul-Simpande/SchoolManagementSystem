@@ -167,3 +167,12 @@ D:\Documents\Projects\School Mangement System\Backend\Sms.Api\bin\Debug\net9.0\S
 D:\Documents\Projects\School Mangement System\Backend\Sms.Api\bin\Debug\net9.0\Yarp.ReverseProxy.dll
 D:\Documents\Projects\School Mangement System\Backend\Sms.Api\bin\Debug\net9.0\Dapper.dll
 D:\Documents\Projects\School Mangement System\Backend\Sms.Api\obj\Debug\net9.0\Sms.Api.sourcelink.json
+D:\Documents\Projects\School Mangement System\Backend\Sms.Api\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Documents\Projects\School Mangement System\Backend\Sms.Api\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Documents\Projects\School Mangement System\Backend\Sms.Api\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Documents\Projects\School Mangement System\Backend\Sms.Api\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+D:\Documents\Projects\School Mangement System\Backend\Sms.Api\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+D:\Documents\Projects\School Mangement System\Backend\Sms.Api\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Documents\Projects\School Mangement System\Backend\Sms.Api\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+D:\Documents\Projects\School Mangement System\Backend\Sms.Api\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Documents\Projects\School Mangement System\Backend\Sms.Api\bin\Debug\net9.0\HotChocolate.AspNetCore.Authorization.dll
