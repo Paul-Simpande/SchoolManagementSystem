@@ -5,17 +5,20 @@ using Sms.Services.Security;
 using Sms.Api.GraphQL.Mutations.Auth;
 using Sms.Api.GraphQL.Mutations.CoreTenant;
 using Sms.Api.GraphQL.Mutations.Engine;
+using Sms.Api.GraphQL.Mutations.PupilAdmissionManagement;
 using Sms.Api.GraphQL.Mutations.UserAccountManagement;
 using Sms.Api.GraphQL.Queries;
 using Sms.Api.GraphQL.Queries.CoreTenant;
 using Sms.Api.GraphQL.Queries.Engine;
 using Sms.Api.GraphQL.Queries.NonStatusMaster;
+using Sms.Api.GraphQL.Queries.PupilAdmissionManagement;
 using Sms.Api.GraphQL.Queries.StatusBased;
 using Sms.Api.GraphQL.Queries.UserAccountManagement;
 using Sms.Core.Interfaces;
 using Sms.Core.Interfaces.CoreTenant;
 using Sms.Core.Interfaces.Engine;
 using Sms.Core.Interfaces.NonStatusMaster;
+using Sms.Core.Interfaces.PupilsAdmissionManagement;
 using Sms.Core.Interfaces.StatusBased;
 using Sms.Core.Interfaces.UserAccountManagement;
 using Sms.Infrastructure.Context;
@@ -23,12 +26,14 @@ using Sms.Infrastructure.Repositories;
 using Sms.Infrastructure.Repositories.CoreTenant;
 using Sms.Infrastructure.Repositories.Engine;
 using Sms.Infrastructure.Repositories.NonStatusMaster;
+using Sms.Infrastructure.Repositories.PupilsAdmissionManagement;
 using Sms.Infrastructure.Repositories.StatusBased;
 using Sms.Infrastructure.Repositories.UserAccountManagement;
 using Sms.Services;
 using Sms.Services.CoreTenant;
 using Sms.Services.Engine;
 using Sms.Services.NonStatusMaster;
+using Sms.Services.PupilAdmissionManagement;
 using Sms.Services.StatusBased;
 using Sms.Services.UserAccountManagement;
 using static Microsoft.AspNetCore.Builder.WebApplication;
@@ -96,6 +101,7 @@ builder.Services.AddScoped<ISupplierTypeRepository, SupplierTypeRepository>();
 builder.Services.AddScoped<IAppUserRepository, AppUserRepository>();
 builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 builder.Services.AddScoped<IUserRoleRepository, UserRoleRepository>();
+builder.Services.AddScoped<IPupilRepository, PupilRepository>();
 
 builder.Services.AddAuthentication("Bearer")
     .AddJwtBearer("Bearer", options =>
@@ -147,6 +153,7 @@ builder.Services.AddScoped<AppUserService>();
 builder.Services.AddScoped<RoleService>();
 builder.Services.AddScoped<UserRoleService>();
 builder.Services.AddScoped<JwtTokenService>();
+builder.Services.AddScoped<PupilService>();
 
 #endregion
 
@@ -195,6 +202,7 @@ builder.Services
     .AddType<AppUserQuery>()
     .AddType<RoleQueries>()
     .AddType<UserRoleQuery>()
+    .AddType<PupilQuery>()
     .AddMutationType(d => d.Name("Mutation"))
     .AddType<SchoolMutation>()
     .AddType<AcademicYearMutation>()
@@ -202,6 +210,7 @@ builder.Services
     .AddType<AppUserMutation>()
     .AddType<UserRoleMutation>()
     .AddType<AuthMutation>()
+    .AddType<PupilsMutation>()
     .AddType<DateType>();
 
 
