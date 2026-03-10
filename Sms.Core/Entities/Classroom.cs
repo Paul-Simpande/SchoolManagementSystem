@@ -24,7 +24,7 @@ public partial class Classroom
 
     [Column("class_name")]
     [StringLength(50)]
-    public string ClassName { get; set; } = null!;
+    public string? ClassName { get; set; } = null!;
 
     [Column("capacity", TypeName = "int(11)")]
     public int? Capacity { get; set; }
