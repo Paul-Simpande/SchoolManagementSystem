@@ -36,7 +36,7 @@ public class PupilRepository : IPupilRepository
     public async Task DeleteAsync(Student pupil)
     {
         pupil.IsDeleted = true;
-        pupil.DeletedAt = DateTime.Now;
+        pupil.DeletedAt = DateTime.UtcNow;
         await _context.SaveChangesAsync();
     }
 }

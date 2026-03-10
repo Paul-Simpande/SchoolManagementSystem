@@ -102,6 +102,8 @@ builder.Services.AddScoped<IAppUserRepository, AppUserRepository>();
 builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 builder.Services.AddScoped<IUserRoleRepository, UserRoleRepository>();
 builder.Services.AddScoped<IPupilRepository, PupilRepository>();
+builder.Services.AddScoped<IClassroomRepository, ClassroomRepository>();
+builder.Services.AddScoped<IPupilsEnrollmentRepository, PupilsEnrollmentRepository>();
 
 builder.Services.AddAuthentication("Bearer")
     .AddJwtBearer("Bearer", options =>
@@ -154,6 +156,8 @@ builder.Services.AddScoped<RoleService>();
 builder.Services.AddScoped<UserRoleService>();
 builder.Services.AddScoped<JwtTokenService>();
 builder.Services.AddScoped<PupilService>();
+builder.Services.AddScoped<ClassroomService>();
+builder.Services.AddScoped<PupilsEnrollmentService>();
 
 #endregion
 
@@ -203,6 +207,8 @@ builder.Services
     .AddType<RoleQueries>()
     .AddType<UserRoleQuery>()
     .AddType<PupilQuery>()
+    .AddType<ClassroomQuery>()
+    .AddType<PupilsEnrollmentQuery>()
     .AddMutationType(d => d.Name("Mutation"))
     .AddType<SchoolMutation>()
     .AddType<AcademicYearMutation>()
@@ -211,6 +217,8 @@ builder.Services
     .AddType<UserRoleMutation>()
     .AddType<AuthMutation>()
     .AddType<PupilsMutation>()
+    .AddType<ClassroomMutation>()
+    .AddType<PupilsEnrollmentMutation>()
     .AddType<DateType>();
 
 
