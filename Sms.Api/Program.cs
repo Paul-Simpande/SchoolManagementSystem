@@ -5,18 +5,22 @@ using Sms.Services.Security;
 using Sms.Api.GraphQL.Mutations.Auth;
 using Sms.Api.GraphQL.Mutations.CoreTenant;
 using Sms.Api.GraphQL.Mutations.Engine;
+using Sms.Api.GraphQL.Mutations.FinanceManagement;
 using Sms.Api.GraphQL.Mutations.PupilAdmissionManagement;
 using Sms.Api.GraphQL.Mutations.UserAccountManagement;
 using Sms.Api.GraphQL.Queries;
 using Sms.Api.GraphQL.Queries.CoreTenant;
 using Sms.Api.GraphQL.Queries.Engine;
+using Sms.Api.GraphQL.Queries.FinanceManagement;
 using Sms.Api.GraphQL.Queries.NonStatusMaster;
 using Sms.Api.GraphQL.Queries.PupilAdmissionManagement;
 using Sms.Api.GraphQL.Queries.StatusBased;
 using Sms.Api.GraphQL.Queries.UserAccountManagement;
+using Sms.Core.Entities;
 using Sms.Core.Interfaces;
 using Sms.Core.Interfaces.CoreTenant;
 using Sms.Core.Interfaces.Engine;
+using Sms.Core.Interfaces.FinanceManagement;
 using Sms.Core.Interfaces.NonStatusMaster;
 using Sms.Core.Interfaces.PupilsAdmissionManagement;
 using Sms.Core.Interfaces.StatusBased;
@@ -25,6 +29,7 @@ using Sms.Infrastructure.Context;
 using Sms.Infrastructure.Repositories;
 using Sms.Infrastructure.Repositories.CoreTenant;
 using Sms.Infrastructure.Repositories.Engine;
+using Sms.Infrastructure.Repositories.FinanceManagement;
 using Sms.Infrastructure.Repositories.NonStatusMaster;
 using Sms.Infrastructure.Repositories.PupilsAdmissionManagement;
 using Sms.Infrastructure.Repositories.StatusBased;
@@ -32,6 +37,7 @@ using Sms.Infrastructure.Repositories.UserAccountManagement;
 using Sms.Services;
 using Sms.Services.CoreTenant;
 using Sms.Services.Engine;
+using Sms.Services.FinanceManagement;
 using Sms.Services.NonStatusMaster;
 using Sms.Services.PupilAdmissionManagement;
 using Sms.Services.StatusBased;
@@ -104,6 +110,10 @@ builder.Services.AddScoped<IUserRoleRepository, UserRoleRepository>();
 builder.Services.AddScoped<IPupilRepository, PupilRepository>();
 builder.Services.AddScoped<IClassroomRepository, ClassroomRepository>();
 builder.Services.AddScoped<IPupilsEnrollmentRepository, PupilsEnrollmentRepository>();
+builder.Services.AddScoped<IFeeStructureRepository, FeeStructureRepository>();
+builder.Services.AddScoped<IInvoiceRepository, InvoiceRepository>();
+builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
+
 
 builder.Services.AddAuthentication("Bearer")
     .AddJwtBearer("Bearer", options =>
@@ -158,6 +168,9 @@ builder.Services.AddScoped<JwtTokenService>();
 builder.Services.AddScoped<PupilService>();
 builder.Services.AddScoped<ClassroomService>();
 builder.Services.AddScoped<PupilsEnrollmentService>();
+builder.Services.AddScoped<FeeStructureService>();
+builder.Services.AddScoped<InvoiceService>();
+builder.Services.AddScoped<PaymentService>();
 
 #endregion
 
@@ -209,6 +222,9 @@ builder.Services
     .AddType<PupilQuery>()
     .AddType<ClassroomQuery>()
     .AddType<PupilsEnrollmentQuery>()
+    .AddType<FeeStructureQuery>()
+    .AddType<InvoiceQuery>()
+    .AddType<PaymentQuery>()
     .AddMutationType(d => d.Name("Mutation"))
     .AddType<SchoolMutation>()
     .AddType<AcademicYearMutation>()
@@ -219,6 +235,9 @@ builder.Services
     .AddType<PupilsMutation>()
     .AddType<ClassroomMutation>()
     .AddType<PupilsEnrollmentMutation>()
+    .AddType<FeeStructureMutation>()
+    .AddType<InvoiceMutation>()
+    .AddType<PaymentMutation>()
     .AddType<DateType>();
 
 
