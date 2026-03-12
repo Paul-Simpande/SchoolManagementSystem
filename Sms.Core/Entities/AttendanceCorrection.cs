@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -34,6 +34,9 @@ public partial class AttendanceCorrection
 
     [Column("updated_at", TypeName = "datetime")]
     public DateTime? UpdatedAt { get; set; }
+
+    [Column("remarks")]
+    public string? Remarks { get; set; }
 
     [ForeignKey("AcademicYearId")]
     [InverseProperty("AttendanceCorrections")]

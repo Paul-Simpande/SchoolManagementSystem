@@ -1,6 +1,7 @@
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Sms.Api.GraphQL.Mutations.AttendanceManagement;
 using Sms.Services.Security;
 using Sms.Api.GraphQL.Mutations.Auth;
 using Sms.Api.GraphQL.Mutations.CoreTenant;
@@ -9,6 +10,7 @@ using Sms.Api.GraphQL.Mutations.FinanceManagement;
 using Sms.Api.GraphQL.Mutations.PupilAdmissionManagement;
 using Sms.Api.GraphQL.Mutations.UserAccountManagement;
 using Sms.Api.GraphQL.Queries;
+using Sms.Api.GraphQL.Queries.AttendanceManagement;
 using Sms.Api.GraphQL.Queries.CoreTenant;
 using Sms.Api.GraphQL.Queries.Engine;
 using Sms.Api.GraphQL.Queries.FinanceManagement;
@@ -16,8 +18,8 @@ using Sms.Api.GraphQL.Queries.NonStatusMaster;
 using Sms.Api.GraphQL.Queries.PupilAdmissionManagement;
 using Sms.Api.GraphQL.Queries.StatusBased;
 using Sms.Api.GraphQL.Queries.UserAccountManagement;
-using Sms.Core.Entities;
 using Sms.Core.Interfaces;
+using Sms.Core.Interfaces.AttendanceManagement;
 using Sms.Core.Interfaces.CoreTenant;
 using Sms.Core.Interfaces.Engine;
 using Sms.Core.Interfaces.FinanceManagement;
@@ -27,6 +29,7 @@ using Sms.Core.Interfaces.StatusBased;
 using Sms.Core.Interfaces.UserAccountManagement;
 using Sms.Infrastructure.Context;
 using Sms.Infrastructure.Repositories;
+using Sms.Infrastructure.Repositories.AttendanceManagement;
 using Sms.Infrastructure.Repositories.CoreTenant;
 using Sms.Infrastructure.Repositories.Engine;
 using Sms.Infrastructure.Repositories.FinanceManagement;
@@ -35,6 +38,7 @@ using Sms.Infrastructure.Repositories.PupilsAdmissionManagement;
 using Sms.Infrastructure.Repositories.StatusBased;
 using Sms.Infrastructure.Repositories.UserAccountManagement;
 using Sms.Services;
+using Sms.Services.AttendanceManagement;
 using Sms.Services.CoreTenant;
 using Sms.Services.Engine;
 using Sms.Services.FinanceManagement;
@@ -113,6 +117,8 @@ builder.Services.AddScoped<IPupilsEnrollmentRepository, PupilsEnrollmentReposito
 builder.Services.AddScoped<IFeeStructureRepository, FeeStructureRepository>();
 builder.Services.AddScoped<IInvoiceRepository, InvoiceRepository>();
 builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
+builder.Services.AddScoped<IAttendanceRepository, AttendanceRepository>();
+builder.Services.AddScoped<IAttendanceCorrectionRepository, AttendanceCorrectionRepository>();
 
 
 builder.Services.AddAuthentication("Bearer")
@@ -171,6 +177,8 @@ builder.Services.AddScoped<PupilsEnrollmentService>();
 builder.Services.AddScoped<FeeStructureService>();
 builder.Services.AddScoped<InvoiceService>();
 builder.Services.AddScoped<PaymentService>();
+builder.Services.AddScoped<AttendanceService>();
+builder.Services.AddScoped<AttendanceCorrectionService>();
 
 #endregion
 
@@ -225,6 +233,8 @@ builder.Services
     .AddType<FeeStructureQuery>()
     .AddType<InvoiceQuery>()
     .AddType<PaymentQuery>()
+    .AddType<AttendanceQuery>()
+    .AddType<AttendanceCorrectionQuery>()
     .AddMutationType(d => d.Name("Mutation"))
     .AddType<SchoolMutation>()
     .AddType<AcademicYearMutation>()
@@ -238,6 +248,8 @@ builder.Services
     .AddType<FeeStructureMutation>()
     .AddType<InvoiceMutation>()
     .AddType<PaymentMutation>()
+    .AddType<AttendanceMutation>()
+    .AddType<AttendanceCorrectionMutation>()
     .AddType<DateType>();
 
 
